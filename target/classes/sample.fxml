@@ -1,0 +1,237 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import com.jfoenix.controls.JFXButton?>
+<?import com.jfoenix.controls.JFXTextArea?>
+<?import com.jfoenix.controls.JFXTextField?>
+<?import javafx.scene.control.Tab?>
+<?import javafx.scene.control.TabPane?>
+<?import javafx.scene.effect.ColorAdjust?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.ColumnConstraints?>
+<?import javafx.scene.layout.GridPane?>
+<?import javafx.scene.layout.RowConstraints?>
+<?import javafx.scene.paint.LinearGradient?>
+<?import javafx.scene.paint.Stop?>
+<?import javafx.scene.shape.Circle?>
+<?import javafx.scene.shape.Rectangle?>
+<?import javafx.scene.text.Font?>
+
+<TabPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="835.0" prefWidth="1196.0" style="-fx-background-color: black;" tabClosingPolicy="UNAVAILABLE" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="sample.Controller">
+  <tabs>
+    <Tab text="clock">
+         <content>
+            <AnchorPane prefHeight="200.0" prefWidth="200.0" style="-fx-background-color: linear-gradient(#e66465, #9198e5); -fx-border-color: brown;">
+               <children>
+                  <Circle fx:id="circle1" fill="#0d0d0d" layoutX="608.0" layoutY="353.0" radius="288.0" strokeType="INSIDE">
+                     <stroke>
+                        <LinearGradient endX="1.0" endY="1.0">
+                           <stops>
+                              <Stop color="BLACK" />
+                              <Stop color="WHITE" offset="1.0" />
+                           </stops>
+                        </LinearGradient>
+                     </stroke>
+                  </Circle>
+                  <JFXTextField fx:id="current" alignment="CENTER" editable="false" layoutX="395.0" layoutY="201.0" prefHeight="81.0" prefWidth="426.0">
+                     <unFocusColor>
+                        <LinearGradient endX="1.0" endY="1.0">
+                           <stops>
+                              <Stop color="RED" />
+                              <Stop color="WHITE" offset="1.0" />
+                           </stops>
+                        </LinearGradient>
+                     </unFocusColor>
+                     <font>
+                        <Font name="Bell MT" size="56.0" />
+                     </font>
+                     <effect>
+                        <ColorAdjust brightness="0.5" />
+                     </effect>
+                  </JFXTextField>
+                  <JFXTextField fx:id="date" alignment="CENTER" editable="false" layoutX="432.0" layoutY="374.0" prefHeight="86.0" prefWidth="371.0">
+                     <unFocusColor>
+                        <LinearGradient endX="1.0" endY="1.0">
+                           <stops>
+                              <Stop color="RED" />
+                              <Stop color="WHITE" offset="1.0" />
+                           </stops>
+                        </LinearGradient>
+                     </unFocusColor>
+                     <font>
+                        <Font name="Bell MT" size="57.0" />
+                     </font>
+                     <effect>
+                        <ColorAdjust brightness="0.55" contrast="-0.18" hue="-0.05" saturation="0.25" />
+                     </effect>
+                  </JFXTextField>
+                  <Circle fx:id="pivot" layoutX="608.0" layoutY="352.0" radius="8.0" stroke="BLACK" strokeType="INSIDE" />
+               </children>
+            </AnchorPane>
+         </content></Tab>
+    <Tab text="stopwatch">
+         <content>
+            <AnchorPane fx:id="" prefHeight="200.0" prefWidth="200.0" style="-fx-background-color: linear-gradient(from 0px 598px to 835px 598px, #3f87a6, #ebf8e1, #f69d3c);">
+               <children>
+                  <Rectangle arcHeight="5.0" arcWidth="5.0" height="635.0" layoutX="240.0" layoutY="65.0" stroke="BLACK" strokeType="INSIDE" width="673.0" />
+                  <JFXTextField fx:id="display" alignment="CENTER" layoutX="268.0" layoutY="129.0" prefHeight="112.0" prefWidth="617.0">
+                     <unFocusColor>
+                        <LinearGradient endX="1.0" endY="1.0">
+                           <stops>
+                              <Stop color="RED" />
+                              <Stop color="WHITE" offset="1.0" />
+                           </stops>
+                        </LinearGradient>
+                     </unFocusColor>
+                     <font>
+                        <Font name="Bell MT" size="66.0" />
+                     </font>
+                  </JFXTextField>
+                  <JFXButton layoutX="268.0" layoutY="303.0" onAction="#onReset" prefHeight="91.0" prefWidth="155.0" style="-fx-background-color: black;" text="⟳" textFill="#a1a0a0">
+                     <font>
+                        <Font size="45.0" />
+                     </font></JFXButton>
+                  <JFXButton alignment="CENTER" layoutX="706.0" layoutY="303.0" onAction="#onPause" prefHeight="97.0" prefWidth="169.0" ripplerFill="#404f79" style="-fx-background-color: black;" text="LAPS" textFill="#a1a0a0">
+                     <font>
+                        <Font name="Bell MT" size="34.0" />
+                     </font></JFXButton>
+                  <JFXButton layoutX="459.0" layoutY="287.0" onAction="#onStart" prefHeight="160.0" prefWidth="224.0" style="-fx-background-color: #282828; -fx-background-radius: 50;" text="⏯" textFill="#b2b2b2">
+                     <font>
+                        <Font name="Bell MT" size="77.0" />
+                     </font></JFXButton>
+                  <JFXTextArea fx:id="display2" layoutX="258.0" layoutY="473.0" prefHeight="219.0" prefWidth="644.0" unFocusColor="#9e9a9a">
+                     <font>
+                        <Font size="34.0" />
+                     </font></JFXTextArea>
+               </children>
+            </AnchorPane>
+         </content></Tab>
+      <Tab text="timer">
+         <content>
+            <AnchorPane prefHeight="200.0" prefWidth="200.0" style="-fx-background-color: linear-gradient(from 0px 0px to 1196px 835px, orange 46%, cyan);">
+               <children>
+                  <Rectangle fx:id="rect2" arcHeight="5.0" arcWidth="5.0" height="635.0" layoutX="240.0" layoutY="65.0" stroke="BLACK" strokeType="INSIDE" width="673.0" />
+                  <JFXButton layoutX="612.0" layoutY="302.0" onAction="#timer" prefHeight="147.0" prefWidth="201.0" style="-fx-background-color: #282828; -fx-background-radius: 50;" text="⏯" textFill="#aeaeae">
+                     <font>
+                        <Font name="Bell MT" size="79.0" />
+                     </font></JFXButton>
+                  <JFXTextField fx:id="display4" alignment="CENTER" layoutX="299.0" layoutY="121.0" prefHeight="106.0" prefWidth="539.0">
+                     <font>
+                        <Font name="Bell MT" size="65.0" />
+                     </font>
+                  </JFXTextField>
+                  <JFXButton layoutX="324.0" layoutY="329.0" onAction="#onRe" prefHeight="91.0" prefWidth="155.0" style="-fx-background-color: black;" text="⟳" textFill="#a1a0a0">
+                     <font>
+                        <Font size="45.0" />
+                     </font>
+                  </JFXButton>
+               </children>
+            </AnchorPane>
+         </content>
+      </Tab>
+      <Tab text="calendar">
+         <content>
+            <AnchorPane prefHeight="200.0" prefWidth="200.0" style="-fx-background-color: linear-gradient(from 0px 598px to 835px 598px, #3f87a6, #ebf8e1, #f69d3c);">
+               <children>
+                  <GridPane gridLinesVisible="true" layoutX="22.0" layoutY="103.0" prefHeight="663.0" prefWidth="1153.0">
+                    <columnConstraints>
+                      <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+                      <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+                        <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+                        <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+                        <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+                        <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+                        <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+                    </columnConstraints>
+                    <rowConstraints>
+                        <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                        <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                        <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                      <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                      <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                      <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                        <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                    </rowConstraints>
+                     <children>
+                        <JFXTextField alignment="CENTER" maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" prefHeight="31.0" prefWidth="142.0" text="SUN" unFocusColor="BLACK" />
+                        <JFXTextField alignment="CENTER" maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" prefHeight="31.0" prefWidth="142.0" text="SAT" GridPane.columnIndex="6" />
+                        <JFXTextField alignment="CENTER" maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" prefHeight="31.0" prefWidth="142.0" text="FRI" GridPane.columnIndex="5" />
+                        <JFXTextField alignment="CENTER" maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" prefHeight="31.0" prefWidth="142.0" text="THURS" GridPane.columnIndex="4" />
+                        <JFXTextField alignment="CENTER" maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" prefHeight="31.0" prefWidth="142.0" text="WED" GridPane.columnIndex="3" />
+                        <JFXTextField alignment="CENTER" maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" prefHeight="31.0" prefWidth="142.0" text="TUES" GridPane.columnIndex="2" />
+                        <JFXTextField alignment="CENTER" maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" prefHeight="31.0" prefWidth="142.0" text="MON" GridPane.columnIndex="1" />
+                        <JFXTextField fx:id="c6" maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" prefHeight="31.0" prefWidth="142.0" GridPane.columnIndex="6" GridPane.rowIndex="1" />
+                        <JFXTextField fx:id="c5" maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" prefHeight="31.0" prefWidth="142.0" GridPane.columnIndex="5" GridPane.rowIndex="1" />
+                        <JFXTextField fx:id="c4" maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" prefHeight="31.0" prefWidth="142.0" GridPane.columnIndex="4" GridPane.rowIndex="1" />
+                        <JFXTextField fx:id="c3" maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" prefHeight="31.0" prefWidth="142.0" GridPane.columnIndex="3" GridPane.rowIndex="1" />
+                        <JFXTextField fx:id="c2" maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" prefHeight="31.0" prefWidth="142.0" GridPane.columnIndex="2" GridPane.rowIndex="1" />
+                        <JFXTextField fx:id="c1" maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" prefHeight="31.0" prefWidth="142.0" GridPane.columnIndex="1" GridPane.rowIndex="1" />
+                        <JFXTextField fx:id="c0" maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" prefHeight="31.0" prefWidth="142.0" GridPane.rowIndex="1" />
+                        <JFXTextField fx:id="c34" maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" prefHeight="31.0" prefWidth="142.0" GridPane.columnIndex="6" GridPane.rowIndex="5" />
+                        <JFXTextField fx:id="c33" maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" prefHeight="31.0" prefWidth="142.0" GridPane.columnIndex="5" GridPane.rowIndex="5" />
+                        <JFXTextField fx:id="c32" maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" prefHeight="31.0" prefWidth="142.0" GridPane.columnIndex="4" GridPane.rowIndex="5" />
+                        <JFXTextField fx:id="c31" maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" prefHeight="31.0" prefWidth="142.0" GridPane.columnIndex="3" GridPane.rowIndex="5" />
+                        <JFXTextField fx:id="c30" maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" prefHeight="31.0" prefWidth="142.0" GridPane.columnIndex="2" GridPane.rowIndex="5" />
+                        <JFXTextField fx:id="c29" maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" prefHeight="31.0" prefWidth="142.0" GridPane.columnIndex="1" GridPane.rowIndex="5" />
+                        <JFXTextField fx:id="c28" maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" prefHeight="31.0" prefWidth="142.0" GridPane.rowIndex="5" />
+                        <JFXTextField fx:id="c27" maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" prefHeight="31.0" prefWidth="142.0" GridPane.columnIndex="6" GridPane.rowIndex="4" />
+                        <JFXTextField fx:id="c26" maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" prefHeight="31.0" prefWidth="142.0" GridPane.columnIndex="5" GridPane.rowIndex="4" />
+                        <JFXTextField fx:id="c25" maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" prefHeight="31.0" prefWidth="142.0" GridPane.columnIndex="4" GridPane.rowIndex="4" />
+                        <JFXTextField fx:id="c24" maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" prefHeight="31.0" prefWidth="142.0" GridPane.columnIndex="3" GridPane.rowIndex="4" />
+                        <JFXTextField fx:id="c23" maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" prefHeight="31.0" prefWidth="142.0" GridPane.columnIndex="2" GridPane.rowIndex="4" />
+                        <JFXTextField fx:id="c22" maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" prefHeight="31.0" prefWidth="142.0" GridPane.columnIndex="1" GridPane.rowIndex="4" />
+                        <JFXTextField fx:id="c21" maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" prefHeight="31.0" prefWidth="142.0" GridPane.rowIndex="4" />
+                        <JFXTextField fx:id="c20" maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" prefHeight="31.0" prefWidth="142.0" GridPane.columnIndex="6" GridPane.rowIndex="3" />
+                        <JFXTextField fx:id="c19" maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" prefHeight="31.0" prefWidth="142.0" GridPane.columnIndex="5" GridPane.rowIndex="3" />
+                        <JFXTextField fx:id="c18" maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" prefHeight="31.0" prefWidth="142.0" GridPane.columnIndex="4" GridPane.rowIndex="3" />
+                        <JFXTextField fx:id="c17" maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" prefHeight="31.0" prefWidth="142.0" GridPane.columnIndex="3" GridPane.rowIndex="3" />
+                        <JFXTextField fx:id="c16" maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" prefHeight="31.0" prefWidth="142.0" GridPane.columnIndex="2" GridPane.rowIndex="3" />
+                        <JFXTextField fx:id="c15" maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" prefHeight="31.0" prefWidth="142.0" GridPane.columnIndex="1" GridPane.rowIndex="3" />
+                        <JFXTextField fx:id="c14" maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" prefHeight="31.0" prefWidth="142.0" GridPane.rowIndex="3" />
+                        <JFXTextField fx:id="c13" maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" prefHeight="31.0" prefWidth="142.0" GridPane.columnIndex="6" GridPane.rowIndex="2" />
+                        <JFXTextField fx:id="c12" maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" prefHeight="31.0" prefWidth="142.0" GridPane.columnIndex="5" GridPane.rowIndex="2" />
+                        <JFXTextField fx:id="c11" maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" prefHeight="31.0" prefWidth="142.0" GridPane.columnIndex="4" GridPane.rowIndex="2" />
+                        <JFXTextField fx:id="c10" maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" prefHeight="31.0" prefWidth="142.0" GridPane.columnIndex="3" GridPane.rowIndex="2" />
+                        <JFXTextField fx:id="c9" maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" prefHeight="31.0" prefWidth="142.0" GridPane.columnIndex="2" GridPane.rowIndex="2" />
+                        <JFXTextField fx:id="c8" maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" prefHeight="31.0" prefWidth="142.0" GridPane.columnIndex="1" GridPane.rowIndex="2" />
+                        <JFXTextField fx:id="c7" maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" prefHeight="31.0" prefWidth="142.0" GridPane.rowIndex="2" />
+                        <JFXTextField fx:id="c36" maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" prefHeight="31.0" prefWidth="142.0" GridPane.columnIndex="1" GridPane.rowIndex="6" />
+                        <JFXTextField fx:id="c35" maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" prefHeight="31.0" prefWidth="142.0" GridPane.rowIndex="6" />
+                     </children>
+                  </GridPane>
+                  <JFXTextField fx:id="calendar" layoutX="87.0" layoutY="38.0" prefHeight="31.0" prefWidth="399.0" />
+                  <JFXButton layoutX="505.0" layoutY="23.0" onAction="#cSearch" prefHeight="31.0" prefWidth="78.0" style="-fx-background-color: black;" text="Go To" textFill="WHITE" />
+               </children>
+            </AnchorPane>
+         </content>
+      </Tab>
+      <Tab text="alarm">
+         <content>
+            <AnchorPane prefHeight="200.0" prefWidth="200.0" style="-fx-background-color: linear-gradient(from 0px 0px to 1196px 835px, orange 46%, cyan);">
+               <children>
+                  <Rectangle fx:id="rect3" arcHeight="5.0" arcWidth="5.0" height="662.0" layoutX="240.0" layoutY="65.0" stroke="BLACK" strokeType="INSIDE" width="712.0" />
+                  <JFXTextField fx:id="display3" alignment="CENTER" layoutX="309.0" layoutY="131.0" prefHeight="106.0" prefWidth="539.0" text="00:00">
+                     <font>
+                        <Font name="Bell MT" size="65.0" />
+                     </font>
+                  </JFXTextField>
+                  <JFXButton layoutX="587.0" layoutY="313.0" onAction="#onRESET" prefHeight="147.0" prefWidth="201.0" style="-fx-background-color: #282828; -fx-background-radius: 50;" text="Reset" textFill="#aeaeae">
+                     <font>
+                        <Font name="Bell MT" size="48.0" />
+                     </font>
+                  </JFXButton>
+                  <JFXButton layoutX="350.0" layoutY="313.0" onAction="#onSet" prefHeight="147.0" prefWidth="201.0" style="-fx-background-color: #282828; -fx-background-radius: 50;" text="SET" textFill="#aeaeae">
+                     <font>
+                        <Font name="Bell MT" size="52.0" />
+                     </font>
+                  </JFXButton>
+                  <JFXTextArea fx:id="display33" layoutX="265.0" layoutY="492.0" prefHeight="219.0" prefWidth="644.0" unFocusColor="#9e9a9a">
+                     <font>
+                        <Font size="34.0" />
+                     </font>
+                  </JFXTextArea>
+               </children>
+            </AnchorPane>
+         </content>
+      </Tab>
+  </tabs>
+</TabPane>
